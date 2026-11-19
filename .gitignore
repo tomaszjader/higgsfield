@@ -1,0 +1,26 @@
+# Dependencies and generated output
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/.output/
+**/.vinxi/
+**/.tanstack/
+**/coverage/
+
+# Local browser automation captures
+.playwright-mcp/
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Redundant local launch note; instructions are in README.md
+START-LOCAL.txt
