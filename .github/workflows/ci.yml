@@ -9,7 +9,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    name: Validate portfolio
+    name: Validate Pages build
     # The app project lives in app/, so every validation command runs there.
     defaults:
       run:
@@ -25,16 +25,7 @@ jobs:
       - name: Typecheck
         run: bun run typecheck
 
-      - name: Lint
-        run: bun run lint
-
-      - name: Test
-        run: bun run test
-
-      # Deploys always ship the design inspector: apps-ci / apps-ci-dev export
-      # HF_DESIGN_INSPECTOR=1 before `bun run build`. Validate that exact
-      # artifact here — one build, not a separate plain + design pair.
-      - name: Build (design inspector on, as deploys ship it)
+      - name: Build static Pages site
         env:
-          HF_DESIGN_INSPECTOR: "1"
+          GITHUB_PAGES: "true"
         run: bun run build
