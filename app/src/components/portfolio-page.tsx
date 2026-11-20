@@ -69,7 +69,7 @@ const projects = [
       pl: "Eksperyment z asystentem głosowym i inteligentną interakcją. Łączę modele językowe z praktycznymi scenariuszami.",
       en: "An experiment in voice assistants and natural interaction, combining language models with practical use cases.",
     },
-    image: siteAssetUrl("assets/jader/szeptucha-voice-assistant.png"), url: "https://github.com/tomaszjader/szeptucha", tech: ["AI", "VOICE", "PYTHON"],
+    image: siteAssetUrl("assets/jader/voice-studio-v2.webp"), url: "https://github.com/tomaszjader/szeptucha", tech: ["AI", "VOICE", "PYTHON"],
   },
   {
     number: "02", name: "RAG / Source of Truth", category: "AI / KNOWLEDGE SYSTEMS",
@@ -77,7 +77,7 @@ const projects = [
       pl: "Praca z wyszukiwaniem informacji i kontekstem w aplikacjach opartych na modelach językowych.",
       en: "Exploring information retrieval and context in applications powered by language models.",
     },
-    image: siteAssetUrl("assets/jader/rag-python-system.png"), url: "https://github.com/tomaszjader/RAG", tech: ["RAG", "LLM", "PYTHON"],
+    image: siteAssetUrl("assets/jader/knowledge-library-v2.webp"), url: "https://github.com/tomaszjader/RAG", tech: ["RAG", "LLM", "PYTHON"],
   },
   {
     number: "03", name: "Context Engineering Agent", category: "AGENTS / AUTOMATION",
@@ -85,7 +85,7 @@ const projects = [
       pl: "Budowanie agentów, którym zależy nie tylko na promptach, ale też na właściwym kontekście i narzędziach.",
       en: "Building agents that depend on more than prompts: the right context and tools matter too.",
     },
-    image: siteAssetUrl("assets/jader/llm-skills-blog-cover.png"), url: "https://github.com/tomaszjader/context-engineering-agent", tech: ["AGENTS", "TOOLS", "AI"],
+    image: siteAssetUrl("assets/jader/context-workbench-v2.webp"), url: "https://github.com/tomaszjader/context-engineering-agent", tech: ["AGENTS", "TOOLS", "AI"],
   },
   {
     number: "04", name: "Agricultural Application", category: "FRONTEND / WEB APPLICATION",
@@ -93,22 +93,22 @@ const projects = [
       pl: "Aplikacja webowa wykorzystująca Angular i TypeScript. Jeden z projektów z mojego portfolio open source.",
       en: "A web application built with Angular and TypeScript, featured in my open-source portfolio.",
     },
-    image: siteAssetUrl("assets/jader/ai.webp"), url: "https://github.com/tomaszjader/agricultural-application", tech: ["ANGULAR", "TYPESCRIPT", "WEB"],
+    image: siteAssetUrl("assets/jader/agriculture-fields-v2.webp"), url: "https://github.com/tomaszjader/agricultural-application", tech: ["ANGULAR", "TYPESCRIPT", "WEB"],
   },
 ];
 
 const interests = {
   pl: [
-    { number: "01", name: "Sztuczna inteligencja", text: "Modele LLM, automatyzacje i nowe sposoby pracy.", image: siteAssetUrl("assets/jader/ai.webp") },
-    { number: "02", name: "Podróże", text: "Nowe miejsca, perspektywy i historie.", image: siteAssetUrl("assets/jader/travel.webp") },
-    { number: "03", name: "Szachy", text: "Strategia, cierpliwość i myślenie kilka ruchów naprzód.", image: siteAssetUrl("assets/jader/chess.webp") },
-    { number: "04", name: "Trening", text: "Równowaga, dyscyplina i rozwój poza ekranem.", image: siteAssetUrl("assets/jader/gim.webp") },
+    { number: "01", name: "Sztuczna inteligencja", text: "Modele LLM, automatyzacje i nowe sposoby pracy.", image: siteAssetUrl("assets/jader/ai-experiments-v2.webp") },
+    { number: "02", name: "Podróże", text: "Nowe miejsca, perspektywy i historie.", image: siteAssetUrl("assets/jader/travel-journey-v2.webp") },
+    { number: "03", name: "Szachy", text: "Strategia, cierpliwość i myślenie kilka ruchów naprzód.", image: siteAssetUrl("assets/jader/chess-study-v2.webp") },
+    { number: "04", name: "Trening", text: "Równowaga, dyscyplina i rozwój poza ekranem.", image: siteAssetUrl("assets/jader/training-studio-v2.webp") },
   ],
   en: [
-    { number: "01", name: "Artificial intelligence", text: "LLMs, automation, and new ways of working.", image: siteAssetUrl("assets/jader/ai.webp") },
-    { number: "02", name: "Travel", text: "New places, perspectives, and stories.", image: siteAssetUrl("assets/jader/travel.webp") },
-    { number: "03", name: "Chess", text: "Strategy, patience, and thinking a few moves ahead.", image: siteAssetUrl("assets/jader/chess.webp") },
-    { number: "04", name: "Training", text: "Balance, discipline, and growth away from the screen.", image: siteAssetUrl("assets/jader/gim.webp") },
+    { number: "01", name: "Artificial intelligence", text: "LLMs, automation, and new ways of working.", image: siteAssetUrl("assets/jader/ai-experiments-v2.webp") },
+    { number: "02", name: "Travel", text: "New places, perspectives, and stories.", image: siteAssetUrl("assets/jader/travel-journey-v2.webp") },
+    { number: "03", name: "Chess", text: "Strategy, patience, and thinking a few moves ahead.", image: siteAssetUrl("assets/jader/chess-study-v2.webp") },
+    { number: "04", name: "Training", text: "Balance, discipline, and growth away from the screen.", image: siteAssetUrl("assets/jader/training-studio-v2.webp") },
   ],
 };
 
