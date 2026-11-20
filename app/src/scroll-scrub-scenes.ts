@@ -26,3 +26,18 @@ export const scrollScrubScenes: ScrollScrubScene[] = [
     mobileObjectPosition: "52% 37%",
   },
 ];
+
+export const scrollScrubScenesByLocale: Record<"pl" | "en", ScrollScrubScene[]> = {
+  pl: scrollScrubScenes,
+  en: [
+    {
+      ...scrollScrubScenes[0],
+      id: "meet-tomasz",
+      label: "The beginning",
+      kicker: "TOMASZ JĄDER  /  FULLSTACK + AI",
+      title: "Technology with a human perspective.",
+      body: "I’m Tomasz. I design and build applications, automations, and AI tools that turn ideas into working solutions.",
+      tags: ["FULLSTACK DEVELOPMENT", "AI & AUTOMATION"],
+    },
+  ],
+};

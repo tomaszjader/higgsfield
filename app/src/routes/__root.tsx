@@ -171,12 +171,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const languageBootstrap = `(()=>{const base=${JSON.stringify(import.meta.env.BASE_URL)};const path=window.location.pathname;const cleanBase=base.endsWith("/")?base:base+"/";if(path===cleanBase||path===cleanBase.slice(0,-1)){const preferred=(navigator.languages&&navigator.languages[0])||navigator.language||"";const locale=/^pl(?:-|$)/i.test(preferred)?"pl":"en";window.location.replace(cleanBase+locale+window.location.search+window.location.hash);return;}const route=path.slice(cleanBase.length);document.documentElement.lang=route==="en"||route.startsWith("en/")?"en":"pl";})();`;
+
   return (
-    <html lang="pl" data-theme="default-dark" style={{ colorScheme: "dark" }}>
+    <html lang="pl" data-theme="default-dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       {/* Marketplace apps are permanently dark: data-theme is pinned on <html>
           above. Do not add quanta's bootstrapScript/ThemeController, a theme
           toggle, or a light mode. */}
       <head>
+        <script dangerouslySetInnerHTML={{ __html: languageBootstrap }} />
         <HeadContent />
       </head>
       <body className="bg-q-background-primary text-q-text-primary">

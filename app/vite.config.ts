@@ -116,8 +116,17 @@ export default defineConfig(({ command, mode }) => {
               pages: [
                 {
                   path: "/",
-                  sitemap: { priority: 1, changefreq: "weekly" as const },
                   prerender: { enabled: true, autoSubfolderIndex: false },
+                },
+                {
+                  path: "/pl",
+                  sitemap: { priority: 0.9, changefreq: "weekly" as const },
+                  prerender: { enabled: true, autoSubfolderIndex: true },
+                },
+                {
+                  path: "/en",
+                  sitemap: { priority: 0.9, changefreq: "weekly" as const },
+                  prerender: { enabled: true, autoSubfolderIndex: true },
                 },
               ],
               sitemap: {
