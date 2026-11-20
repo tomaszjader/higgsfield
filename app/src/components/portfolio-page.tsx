@@ -236,7 +236,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <a className="tj-mail-link" href={`mailto:tomasz.jader@gmail.com?subject=${encodeURIComponent(t.emailSubject)}`}><span>tomasz.jader@gmail.com</span><Arrow diagonal /></a>
             <div className="tj-footer-bottom">
               <div className="tj-footer-brand"><img src={siteAssetUrl("assets/jader/brand-mark.svg")} alt="" width="28" height="28" /><span>TOMASZ JĄDER © 2026</span></div>
-              <div className="tj-socials"><a href="https://github.com/tomaszjader" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/tomasz-j" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://tomaszjader.com/" target="_blank" rel="noopener noreferrer">{t.originalSite} ↗</a></div>
+              <div className="tj-socials"><a href="https://github.com/tomaszjader" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/tomasz-jader/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://tomaszjader.com/" target="_blank" rel="noopener noreferrer">{t.originalSite} ↗</a></div>
               <a className="tj-back-top" href="#start">{t.backTop}</a>
             </div>
           </div>
