@@ -8,6 +8,7 @@ import {
 import svgr from "vite-plugin-svgr";
 import { defaultServerConditions, defineConfig } from "vite";
 import { fileURLToPath } from "node:url";
+import { blogPostSlugs } from "./src/blog-content";
 
 // The vendored @higgsfield/quanta components import their glyphs from the private
 // Nexus-only `@higgsfield-ai/icons`. Generated sites build on the PUBLIC npm
@@ -128,6 +129,16 @@ export default defineConfig(({ command, mode }) => {
                   sitemap: { priority: 0.9, changefreq: "weekly" as const },
                   prerender: { enabled: true, autoSubfolderIndex: true },
                 },
+                {
+                  path: "/blog",
+                  sitemap: { priority: 0.8, changefreq: "weekly" as const },
+                  prerender: { enabled: true, autoSubfolderIndex: true },
+                },
+                ...blogPostSlugs.map((slug) => ({
+                  path: `/blog/${slug}`,
+                  sitemap: { priority: 0.7, changefreq: "monthly" as const },
+                  prerender: { enabled: true, autoSubfolderIndex: true },
+                })),
               ],
               sitemap: {
                 enabled: true,

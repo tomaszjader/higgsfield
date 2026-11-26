@@ -2,6 +2,8 @@ import type { CSSProperties, ReactNode } from "react";
 import { ScrollScrub } from "@/components/scroll-scrub/scroll-scrub";
 import { siteAssetUrl } from "@/lib/site-asset-url";
 import { scrollScrubScenesByLocale, scrollScrubTheme } from "@/scroll-scrub-scenes";
+import { blogPosts } from "@/blog-content";
+import "./blog/home-blog.css";
 
 export type Locale = "pl" | "en";
 
@@ -27,6 +29,9 @@ const copy = {
     labEyebrow: "EKSPERYMENTY AI", labLabel: "THE AI LAB / CIĄGŁA EKSPLORACJA", labStart: "Jutro", labEmphasis: "buduje się dziś.",
     labText: "Agenci AI, RAG, automatyzacja i integracje z narzędziami. Lubię testować to, co nowe, ale jeszcze bardziej lubię sprawdzać, co naprawdę działa.",
     labLink: "Poznaj moje eksperymenty i artykuły",
+    blogEyebrow: "BLOG / NOTATKI Z PRAKTYKI", blogStart: "Zapiski z pracy", blogEmphasis: "i eksperymentów.",
+    blogIntro: "O AI, tworzeniu aplikacji i narzędziach, które sprawdzam w praktyce.",
+    blogAll: "Wszystkie wpisy", blogRead: "Czytaj wpis", blogLanguage: "",
     interestsEyebrow: "POZA EKRANEM", interestsStart: "Po godzinach", interestsEmphasis: "też jestem ciekawy.",
     interestsIntro: "Świat nie kończy się na ekranie. To, co robię poza pracą, daje mi zupełnie nowe spojrzenie na to, co robię w niej.",
     contactEyebrow: "KONTAKT", contactIntro: "OTWARTY NA NOWE WYZWANIA", contactStart: "Masz pomysł?", contactEmphasis: "Zróbmy coś razem.",
@@ -54,6 +59,9 @@ const copy = {
     labEyebrow: "AI EXPERIMENTS", labLabel: "THE AI LAB / CONTINUOUS EXPLORATION", labStart: "Tomorrow", labEmphasis: "is built today.",
     labText: "AI agents, RAG, automation, and tool integrations. I enjoy testing what’s new, and I enjoy even more finding out what actually works.",
     labLink: "Explore my experiments and articles",
+    blogEyebrow: "BLOG / NOTES FROM PRACTICE", blogStart: "Notes from work", blogEmphasis: "and experiments.",
+    blogIntro: "On AI, building applications, and the tools I put to the test.",
+    blogAll: "All articles", blogRead: "Read article", blogLanguage: "Articles in Polish",
     interestsEyebrow: "BEYOND THE SCREEN", interestsStart: "Curiosity doesn’t", interestsEmphasis: "clock out.",
     interestsIntro: "There’s more to life than a screen. What I do outside work gives me a fresh perspective on what I do every day.",
     contactEyebrow: "CONTACT", contactIntro: "OPEN TO NEW CHALLENGES", contactStart: "Have an idea?", contactEmphasis: "Let’s build it together.",
@@ -61,6 +69,10 @@ const copy = {
     languageLabel: "Choose language", switchLanguage: "Polski",
   },
 } as const;
+
+const latestBlogPosts = [...blogPosts]
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  .slice(0, 3);
 
 const projects = [
   {
@@ -136,9 +148,11 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           <a href="#o-mnie">{t.nav[0]}</a>
           <a href="#projekty">{t.nav[1]}</a>
           <a href="#umiejetnosci">{t.nav[2]}</a>
+          <a href="#blog">Blog</a>
           <a href="#po-godzinach">{t.nav[3]}</a>
         </nav>
         <div className="tj-header-actions">
+          <a className="tj-header-blog" href="#blog">Blog</a>
           <a className="tj-language-switch" href={siteAssetUrl(locale === "pl" ? "en/" : "pl/")} lang={locale === "pl" ? "en" : "pl"} aria-label={`${t.languageLabel}: ${t.switchLanguage}`}>
             {locale === "pl" ? "EN" : "PL"}
           </a>
@@ -154,7 +168,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         </div>
 
         <section className="tj-manifest tj-container" id="o-mnie">
-          <Eyebrow index="01 / 06">{t.aboutEyebrow}</Eyebrow>
+          <Eyebrow index="01 / 07">{t.aboutEyebrow}</Eyebrow>
           <div className="tj-manifest-grid">
             <div className="tj-manifest-title">
               <p className="tj-intro-label"><span className="tj-signal" /> {t.intro}</p>
@@ -172,7 +186,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
 
         <section className="tj-expertise" id="umiejetnosci">
           <div className="tj-container">
-            <Eyebrow index="02 / 06">{t.toolsEyebrow}</Eyebrow>
+            <Eyebrow index="02 / 07">{t.toolsEyebrow}</Eyebrow>
             <div className="tj-expertise-heading"><h2>{t.expertiseStart} <em>{t.expertiseEmphasis}</em></h2><p>{t.expertiseIntro}</p></div>
             <div className="tj-capabilities">
               {t.capabilities.map((capability, index) => (
@@ -183,7 +197,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         </section>
 
         <section className="tj-projects tj-container" id="projekty">
-          <Eyebrow index="03 / 06">{t.projectsEyebrow}</Eyebrow>
+          <Eyebrow index="03 / 07">{t.projectsEyebrow}</Eyebrow>
           <div className="tj-section-heading"><h2>{t.projectsStart} <em>{t.projectsEmphasis}</em></h2><p>{t.projectsIntro}</p></div>
           <div className="tj-project-grid">
             {projects.map((project) => (
@@ -204,17 +218,50 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         <section className="tj-ai-lab" id="ai-lab">
           <div className="tj-ai-lab-art" aria-hidden="true" style={{ "--tj-ai-lab-image": `url("${siteAssetUrl("assets/jader/lab-architecture.webp")}")` } as CSSProperties & { "--tj-ai-lab-image": string }} />
           <div className="tj-container tj-ai-lab-content">
-            <Eyebrow index="04 / 06">{t.labEyebrow}</Eyebrow>
+            <Eyebrow index="04 / 07">{t.labEyebrow}</Eyebrow>
             <div className="tj-ai-lab-label">{t.labLabel}</div>
             <h2>{t.labStart} <em>{t.labEmphasis}</em></h2>
             <p>{t.labText}</p>
-            <a className="tj-lab-link" href="https://tomaszjader.com/" target="_blank" rel="noopener noreferrer"><span>{t.labLink}</span><Arrow diagonal /></a>
+            <a className="tj-lab-link" href="#blog"><span>{t.labLink}</span><Arrow diagonal /></a>
           </div>
           <div className="tj-ai-lab-footer" aria-hidden="true"><span>HUMAN IDEAS</span><span>✳</span><span>INTELLIGENT SYSTEMS</span></div>
         </section>
 
+        <section className="tj-home-blog tj-container" id="blog" aria-labelledby="tj-home-blog-title">
+          <Eyebrow index="05 / 07">{t.blogEyebrow}</Eyebrow>
+          <div className="tj-section-heading tj-home-blog-heading">
+            <h2 id="tj-home-blog-title">{t.blogStart} <em>{t.blogEmphasis}</em></h2>
+            <div className="tj-home-blog-intro">
+              <p>{t.blogIntro}</p>
+              {t.blogLanguage && <span className="tj-home-blog-language">{t.blogLanguage}</span>}
+            </div>
+          </div>
+          <div className="tj-home-blog-grid">
+            {latestBlogPosts.map((post) => (
+              <article className="tj-home-blog-post" key={post.slug} lang="pl">
+                <a className="tj-home-blog-card" href={siteAssetUrl(`blog/${post.slug}/`)} aria-labelledby={`home-blog-${post.slug}`}>
+                  <div className="tj-home-blog-image">
+                    <img src={siteAssetUrl(post.image)} alt={post.imageAlt} loading="lazy" width="640" height="640" />
+                    <span className="tj-home-blog-image-arrow"><Arrow diagonal /></span>
+                  </div>
+                  <div className="tj-home-blog-copy">
+                    <div className="tj-home-blog-meta">
+                      <span>{post.category}</span>
+                      <time dateTime={post.publishedAt}>{new Intl.DateTimeFormat("pl-PL", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(post.publishedAt))}</time>
+                    </div>
+                    <h3 id={`home-blog-${post.slug}`}>{post.title}</h3>
+                    <p>{post.excerpt}</p>
+                  </div>
+                  <div className="tj-home-blog-read" lang={locale}><span>{t.blogRead}</span><Arrow /></div>
+                </a>
+              </article>
+            ))}
+          </div>
+          <a className="tj-home-blog-all" href={siteAssetUrl("blog/")}><span>{t.blogAll}</span><Arrow diagonal /></a>
+        </section>
+
         <section className="tj-interests tj-container" id="po-godzinach">
-          <Eyebrow index="05 / 06">{t.interestsEyebrow}</Eyebrow>
+          <Eyebrow index="06 / 07">{t.interestsEyebrow}</Eyebrow>
           <div className="tj-section-heading tj-interests-heading"><h2>{t.interestsStart} <em>{t.interestsEmphasis}</em></h2><p>{t.interestsIntro}</p></div>
           <div className="tj-interest-grid">
             {interests[locale].map((interest) => (
@@ -230,7 +277,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
 
         <section className="tj-contact" id="kontakt">
           <div className="tj-container">
-            <Eyebrow index="06 / 06">{t.contactEyebrow}</Eyebrow>
+            <Eyebrow index="07 / 07">{t.contactEyebrow}</Eyebrow>
             <p className="tj-contact-intro"><span className="tj-signal" /> {t.contactIntro}</p>
             <h2>{t.contactStart}<br /><em>{t.contactEmphasis}</em></h2>
             <a className="tj-mail-link" href={`mailto:tomasz.jader@gmail.com?subject=${encodeURIComponent(t.emailSubject)}`}><span>tomasz.jader@gmail.com</span><Arrow diagonal /></a>

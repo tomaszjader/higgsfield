@@ -1,0 +1,134 @@
+.tj-blog-website { min-height:100dvh; }
+.tj-blog-header { position:relative; }
+.tj-blog-home-link,.tj-blog-back { display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600; }
+.tj-blog-home-link:hover,.tj-blog-back:hover { color:var(--tj-accent); }
+.tj-blog-header .tj-nav a[aria-current] { color:var(--tj-accent); }
+.tj-blog-intro { padding-top:90px; }
+.tj-blog-heading { display:grid;grid-template-columns:1.7fr 1fr;gap:70px;align-items:end;margin:42px 0 70px; }
+.tj-blog-heading h1,.tj-blog-post-intro h1,.tj-blog-missing h1 { font-family:'Space Grotesk',sans-serif;font-size:clamp(3.3rem,6.8vw,7.4rem);font-weight:500;letter-spacing:-.065em;line-height:1.04;margin:0; }
+.tj-blog-heading>p { max-width:340px;color:var(--tj-fog);font-size:17px;line-height:1.85;margin:0 0 5px;justify-self:end; }
+.tj-blog-card { min-width:0; }
+.tj-blog-card-link { display:flex;height:100%;flex-direction:column; }
+.tj-blog-card-image { position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--tj-bg);border:1px solid var(--tj-border); }
+.tj-blog-card-image>img { display:block;width:100%;height:100%;object-fit:contain;transition:transform .45s ease; }
+.tj-blog-card-link:hover .tj-blog-card-image>img { transform:scale(1.025); }
+.tj-blog-image-arrow { position:absolute;right:18px;bottom:18px;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;background:var(--tj-accent);color:var(--tj-bg);font-size:25px;transition:transform .25s; }
+.tj-blog-card-link:hover .tj-blog-image-arrow { transform:rotate(45deg); }
+.tj-blog-post-meta { display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;color:var(--tj-fog);font-size:11px;line-height:1.5; }
+.tj-blog-post-meta>span:first-child { color:var(--tj-accent);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.13em; }
+.tj-blog-card-copy { display:flex;flex:1;flex-direction:column;padding-top:23px; }
+.tj-blog-card h2 { font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,2vw,30px);font-weight:500;line-height:1.24;letter-spacing:-.035em;margin:17px 0;transition:color .2s;overflow-wrap:anywhere; }
+.tj-blog-card-link:hover h2 { color:var(--tj-accent); }
+.tj-blog-card-copy>p { font-size:14px;line-height:1.8;color:var(--tj-fog);margin-bottom:23px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden; }
+.tj-blog-card-bottom { display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid var(--tj-border);padding:17px 0 0;margin-top:auto;font-size:11px; }
+.tj-blog-card-bottom>span:first-child { display:flex;align-items:center;gap:15px;font-weight:700; }
+.tj-blog-card-bottom>span:last-child { color:var(--tj-fog);white-space:nowrap; }
+.tj-blog-featured { border-bottom:1px solid var(--tj-border);padding-bottom:54px; }
+.tj-blog-featured .tj-blog-card-link { display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(30px,5vw,75px);align-items:center; }
+.tj-blog-featured .tj-blog-card-image { aspect-ratio:4/3; }
+.tj-blog-featured .tj-blog-card-copy { padding-top:0; }
+.tj-blog-featured h2 { font-size:clamp(27px,3vw,46px);margin:25px 0;line-height:1.14;letter-spacing:-.045em; }
+.tj-blog-featured .tj-blog-card-copy>p { font-size:16px;-webkit-line-clamp:4; }
+.tj-blog-archive { padding-top:75px;padding-bottom:110px; }
+.tj-blog-archive-top { display:flex;align-items:center;justify-content:space-between;gap:30px;margin-bottom:32px; }
+.tj-blog-archive-top h2 { font-family:'Space Grotesk',sans-serif;font-size:clamp(30px,3vw,45px);font-weight:500;letter-spacing:-.045em;margin:0; }
+.tj-blog-archive-top h2>span { color:var(--tj-fog);font-size:16px;letter-spacing:0; }
+.tj-blog-search { display:flex;flex-direction:column;gap:9px;width:min(100%,340px);font-size:11px;color:var(--tj-fog); }
+.tj-blog-search input { width:100%;background:transparent;color:var(--tj-paper);border:0;border-bottom:1px solid var(--tj-fog);border-radius:0;padding:10px 0;font:inherit;font-size:15px; }
+.tj-blog-search input:focus-visible { outline:2px solid var(--tj-accent);outline-offset:5px; }
+.tj-blog-search input::placeholder { color:var(--tj-fog); }
+.tj-blog-filters { display:flex;flex-wrap:wrap;gap:8px; }
+.tj-blog-filters button { border:1px solid var(--tj-border);border-radius:30px;background:transparent;color:var(--tj-fog);padding:9px 15px;font-family:inherit;font-size:11px;cursor:pointer;transition:background .2s,color .2s; }
+.tj-blog-filters button[aria-pressed=true],.tj-blog-filters button:hover { border-color:var(--tj-accent);background:var(--tj-accent);color:var(--tj-bg); }
+.tj-blog-result-count { font-size:12px;color:var(--tj-fog);margin:22px 0 32px; }
+.tj-blog-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:60px 27px; }
+.tj-blog-load-more { display:flex;justify-content:space-between;gap:25px;align-items:center;width:100%;padding:25px 0;margin-top:65px;border:0;border-top:1px solid var(--tj-fog);border-bottom:1px solid var(--tj-fog);background:transparent;color:var(--tj-paper);font:inherit;font-size:17px;cursor:pointer; }
+.tj-blog-load-more:hover { color:var(--tj-accent); }
+.tj-blog-load-more>span { font-size:12px;color:var(--tj-fog); }
+.tj-blog-empty { padding:60px 0; }
+.tj-blog-empty p { color:var(--tj-fog); }
+.tj-blog-empty button { background:var(--tj-accent);color:var(--tj-bg);font:inherit;border:0;padding:14px 20px;cursor:pointer; }
+.tj-blog-footer { display:flex;align-items:center;justify-content:space-between;gap:25px;padding:32px 0;border-top:1px solid var(--tj-border);font-size:12px; }
+.tj-blog-footer>p { margin:0;color:var(--tj-fog); }
+.tj-blog-footer>a:last-child { display:flex;gap:20px; }
+.tj-blog-post-intro { padding-top:45px; }
+.tj-blog-post-intro>.tj-blog-post-meta { margin-top:60px; }
+.tj-blog-post-intro h1 { max-width:1150px;font-size:clamp(2.6rem,5.2vw,5.6rem);margin:24px 0 27px;line-height:1.09;overflow-wrap:anywhere; }
+.tj-blog-post-lead { max-width:850px;font-size:clamp(16px,1.6vw,21px);line-height:1.8;color:var(--tj-fog); }
+.tj-blog-author { display:flex;align-items:center;gap:13px;margin:30px 0 50px; }
+.tj-blog-author img { width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top; }
+.tj-blog-author>div { display:flex;flex-direction:column;gap:5px;font-size:12px; }
+.tj-blog-author strong { font-weight:600; }
+.tj-blog-author span { font-size:10px;color:var(--tj-fog); }
+.tj-blog-post-cover { margin:0 auto;max-width:1040px;padding-bottom:65px; }
+.tj-blog-post-cover img { display:block;width:100%;max-height:620px;object-fit:contain; }
+.tj-blog-reading { padding:85px 0 80px;background:var(--tj-paper);color:var(--tj-bg); }
+.tj-blog-reading-grid { display:grid;grid-template-columns:240px minmax(0,780px);gap:clamp(35px,7vw,110px);justify-content:center;align-items:start; }
+.tj-blog-contents { align-self:stretch;min-width:0; }
+.tj-blog-contents-inner { position:sticky;top:35px;max-height:calc(100dvh - 70px);overflow-y:auto;padding:8px 12px 15px 0; }
+.tj-blog-contents-inner>p:first-child { font-size:10px;font-weight:700;letter-spacing:.15em;margin-bottom:25px; }
+.tj-blog-contents ol { list-style:none;padding:0;margin:0 0 32px;border-left:1px solid currentColor; }
+.tj-blog-contents li { margin:0;padding:0; }
+.tj-blog-contents li>a { display:block;font-size:12px;line-height:1.6;padding:8px 0 8px 18px; }
+.tj-blog-contents a:hover { color:var(--tj-bg);text-decoration:underline;text-underline-offset:4px; }
+.tj-blog-contents-note { font-size:13px;line-height:1.7; }
+.tj-blog-prose { font-size:17px;line-height:1.95;overflow-wrap:anywhere; }
+.tj-blog-prose>:first-child { margin-top:0; }
+.tj-blog-prose p { margin-bottom:1.4em; }
+.tj-blog-prose h1,.tj-blog-prose h2,.tj-blog-prose h3,.tj-blog-prose h4 { font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1.25;margin:1.8em 0 .8em;scroll-margin-top:30px; }
+.tj-blog-prose h1,.tj-blog-prose h2 { font-size:clamp(26px,2.8vw,37px); }
+.tj-blog-prose h3 { font-size:25px; }
+.tj-blog-prose h4 { font-size:21px; }
+.tj-blog-prose ul,.tj-blog-prose ol { margin:0 0 1.5em;padding-left:1.5em; }
+.tj-blog-prose ul { list-style:disc; }.tj-blog-prose ol { list-style:decimal; }
+.tj-blog-prose li { margin:.45em 0; }
+.tj-blog-prose a { text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px; }
+.tj-blog-prose a:hover { text-decoration-thickness:2px; }
+.tj-blog-prose strong { font-weight:700; }
+.tj-blog-prose em { color:inherit;font-style:italic; }
+.tj-blog-prose blockquote { margin:2em 0;padding:10px 0 10px 25px;border-left:3px solid var(--tj-accent);font-size:1.1em; }
+.tj-blog-prose blockquote>:last-child { margin-bottom:0; }
+.tj-blog-prose pre { overflow:auto;max-width:100%;padding:24px;margin:28px 0;background:var(--tj-bg);color:var(--tj-paper);font-size:13px;line-height:1.8;white-space:pre;tab-size:2; }
+.tj-blog-prose code { font-family:Consolas,'Courier New',monospace;font-size:.86em; }
+.tj-blog-prose :not(pre)>code { background:color-mix(in srgb,var(--tj-bg) 8%,transparent);padding:2px 5px; }
+.tj-blog-prose img { display:block;width:auto;max-width:100%;height:auto;margin:30px auto; }
+.tj-blog-prose table { display:block;overflow-x:auto;max-width:100%;width:max-content;border-collapse:collapse;margin:28px 0;font-size:14px; }
+.tj-blog-prose th,.tj-blog-prose td { padding:12px 16px;border:1px solid color-mix(in srgb,var(--tj-bg) 25%,transparent);text-align:left;min-width:100px; }
+.tj-blog-prose th { background:color-mix(in srgb,var(--tj-bg) 6%,transparent);font-weight:700; }
+.tj-blog-prose hr { margin:35px 0;border:0;border-top:1px solid color-mix(in srgb,var(--tj-bg) 25%,transparent); }
+.tj-blog-article-end { border-top:1px solid color-mix(in srgb,var(--tj-bg) 25%,transparent);margin-top:50px;padding-top:28px; }
+.tj-blog-tags { display:flex;flex-wrap:wrap;gap:8px 15px;font-size:12px; }
+.tj-blog-article-end>a { display:inline-flex;gap:20px;font-size:12px;font-weight:600;margin-top:28px; }
+.tj-blog-related { padding-top:90px;padding-bottom:90px; }
+.tj-blog-related .tj-blog-archive-top>a { font-size:12px; }
+.tj-blog-related-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:35px; }
+.tj-blog-missing { padding:100px 0 150px;min-height:65dvh; }
+.tj-blog-missing>p { margin:25px 0; }
+@media(max-width:1100px) {
+  .tj-blog-heading { gap:35px; }.tj-blog-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tj-blog-reading-grid { grid-template-columns:190px minmax(0,1fr);gap:35px; }
+}
+@media(max-width:760px) {
+  .tj-blog-header .tj-blog-home-link { font-size:11px;gap:6px; }.tj-blog-intro { padding-top:55px; }
+  .tj-blog-heading { display:block;margin:32px 0 45px; }.tj-blog-heading h1 { font-size:clamp(3.2rem,10vw,5.2rem); }
+  .tj-blog-heading>p { margin-top:25px;font-size:15px;max-width:450px; }
+  .tj-blog-featured .tj-blog-card-link { display:flex;gap:0; }.tj-blog-featured .tj-blog-card-copy { padding-top:24px; }
+  .tj-blog-featured h2 { font-size:30px;margin:18px 0; }.tj-blog-featured .tj-blog-card-copy>p { font-size:15px; }
+  .tj-blog-featured { padding-bottom:40px; }.tj-blog-archive { padding:45px 0 65px; }
+  .tj-blog-archive-top { align-items:start;flex-direction:column;gap:25px; }.tj-blog-search { width:100%; }
+  .tj-blog-grid { gap:45px 20px; }.tj-blog-card h2 { font-size:23px; }.tj-blog-card-bottom { font-size:10px; }
+  .tj-blog-post-intro { padding-top:30px; }.tj-blog-post-intro>.tj-blog-post-meta { margin-top:40px;gap:10px 17px; }
+  .tj-blog-post-intro h1 { font-size:clamp(2.1rem,7.5vw,3.6rem);margin-top:20px; }.tj-blog-author { margin-bottom:30px; }
+  .tj-blog-post-cover { padding-bottom:35px; }.tj-blog-reading { padding:35px 0 45px; }
+  .tj-blog-reading-grid { grid-template-columns:minmax(0,1fr);gap:32px; }.tj-blog-contents-inner { position:static;max-height:none;padding:0; }
+  .tj-blog-contents-inner>p:first-child { margin-bottom:12px; }.tj-blog-contents ol { margin-bottom:20px; }
+  .tj-blog-contents li>a { padding:6px 0 6px 16px;font-size:12px; }.tj-blog-contents .tj-blog-back { display:none; }
+  .tj-blog-prose { font-size:16px;line-height:1.9; }.tj-blog-prose pre { padding:17px;font-size:12px; }
+  .tj-blog-related { padding-top:50px;padding-bottom:55px; }.tj-blog-related-grid { gap:25px; }
+  .tj-blog-related .tj-blog-archive-top { gap:15px; }.tj-blog-footer { flex-wrap:wrap;gap:22px; }.tj-blog-footer>p { display:none; }
+}
+@media(max-width:540px) {
+  .tj-blog-grid,.tj-blog-related-grid { grid-template-columns:minmax(0,1fr); }.tj-blog-card h2 { font-size:27px; }
+  .tj-blog-header .tj-brand { min-width:0; }.tj-blog-header .tj-header-actions { gap:13px; }
+  .tj-blog-header .tj-header-contact { display:none; }.tj-blog-footer { font-size:11px; }
+}
